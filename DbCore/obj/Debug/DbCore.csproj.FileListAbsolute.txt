@@ -1,0 +1,11 @@
+C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\bin\Debug\DbCore.dll.config
+C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\bin\Debug\DbCore.dll
+C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\bin\Debug\DbCore.pdb
+C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\bin\Debug\EntityFramework.dll
+C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\bin\Debug\EntityFramework.xml
+C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\obj\Debug\DbCore.csprojResolveAssemblyReference.cache
+C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\obj\Debug\DbCore.csproj.CoreCompileInputs.cache
+C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\obj\Debug\DbCore.dll
+C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\obj\Debug\DbCore.pdb
