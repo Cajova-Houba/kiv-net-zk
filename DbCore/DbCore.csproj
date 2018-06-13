@@ -51,6 +51,7 @@
     <Compile Include="Model\AbstractEntity.cs" />
     <Compile Include="Model\Drink.cs" />
     <Compile Include="Model\IEntity.cs" />
+    <Compile Include="Model\IExportable.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\PendingOrder.cs" />

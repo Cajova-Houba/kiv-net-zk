@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,21 @@ namespace EntityFrameworkTest1
         private void PayForOrderClick(object sender, RoutedEventArgs e)
         {
             ((ViewModel.ViewModel)DataContext).PayOrder();
+        }
+
+        private void HtmlExportClick(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    ((ViewModel.ViewModel)DataContext).ExportLastMonthOrders(saveFileDialog.FileName);
+                } catch (Exception ex)
+                {
+                    MessageBox.Show("Error while exporting data: "+ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
     }
 }

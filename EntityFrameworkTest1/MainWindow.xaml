@@ -80,11 +80,25 @@
         </TabItem>
 
         <TabItem Header="Accounting">
-            <GroupBox Header="Last month's transacitons">
-                <DataGrid ItemsSource="{Binding LastMonthOrders}" IsReadOnly="True">
-                    
-                </DataGrid>
-            </GroupBox>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                
+                <GroupBox Header="Last month's transacitons" Grid.Row="0">
+                    <DataGrid ItemsSource="{Binding LastMonthOrders}" IsReadOnly="True">
+
+                    </DataGrid>
+                </GroupBox>
+
+                <GroupBox Header="Export" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="To Html" Click="HtmlExportClick" />
+                        <Button Content="To csv"/>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
         </TabItem>
     </TabControl>
 </Window>

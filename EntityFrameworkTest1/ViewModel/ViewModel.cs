@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -141,6 +142,17 @@ namespace EntityFrameworkTest1.ViewModel
             barService.PayForOrder(SelectedPendingOrder);
             Refresh();
             SelectedPendingOrder = null;
+        }
+
+        public void ExportLastMonthOrders(String fileName)
+        {
+            LastMonthOrders = new ObservableCollection<Order>(barService.OrdersInCurrentMonth());
+            string htmlExport = HtmlExporter.ExportToHtml(new Dictionary<string, ICollection<IExportable>>()
+            {
+                { "Orders in last month", new List<IExportable>(LastMonthOrders) }
+            },
+            "Orders in last month");
+            File.WriteAllText(fileName + ".html", htmlExport);
         }
     }
 }
