@@ -17,7 +17,7 @@ namespace DbCore.Model
         public override string ToString()
         {
             string ingredients = String.Join(", ", Ingredients.Select(i => i.Name));
-            return $"{Name} ({ingredients}";
+            return $"{Name} ({ingredients})";
         }
     }
 }

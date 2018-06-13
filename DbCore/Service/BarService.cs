@@ -35,13 +35,15 @@ namespace DbCore.Service
         {
             PendingOrder po = new PendingOrder() { Table = table, Name = name, RealPrice = price };
             barContext.PendingOrders.Add(po);
+            barContext.SaveChanges();
         }
 
         public void PayForOrder(PendingOrder po)
         {
-            Order o = new Order() { Name = po.Name, RealPrice = po.RealPrice, DatePaid = new DateTime() };
+            Order o = new Order() { Name = po.Name, RealPrice = po.RealPrice, DatePaid = DateTime.Now };
             barContext.Orders.Add(o);
             barContext.PendingOrders.Remove(po);
+            barContext.SaveChanges();
         }
 
         public List<Order> OrdersInCurrentMonth()
@@ -50,7 +52,7 @@ namespace DbCore.Service
             DateTime dateFrom = new DateTime(now.Year, now.Month, 1);
             DateTime dateTo = dateFrom.AddMonths(1).AddDays(-1);
 
-            return OrdersInDateRange(dateFrom, dateTo);
+            return barContext.Orders.ToList();
         }
 
         public List<Order> OrdersInDateRange(DateTime dateFrom, DateTime dateTo)

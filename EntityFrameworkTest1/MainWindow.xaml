@@ -6,12 +6,85 @@
         xmlns:local="clr-namespace:EntityFrameworkTest1"
         xmlns:ViewModel="clr-namespace:EntityFrameworkTest1.ViewModel" x:Class="EntityFrameworkTest1.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Bar" Height="350" Width="525">
     <Window.DataContext>
         <ViewModel:ViewModel/>
     </Window.DataContext>
+    <TabControl>
+        <TabItem Header="Bar">
+            <DockPanel LastChildFill="True">
+                <GroupBox Header="Add order" DockPanel.Dock="Top">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-    <Grid>
-        <DataGrid ItemsSource="{Binding Tables}"/>
-    </Grid>
+                        <ComboBox ItemsSource="{Binding Drinks}" Grid.Column="0" SelectedItem="{Binding AddOrderSelectedDrink}"/>
+                        <TextBox Text="Price" Grid.Column="1"/>
+                        <ComboBox ItemsSource="{Binding Tables}" Grid.Column="2" SelectedItem="{Binding AddOrderSelectedTable}"/>
+                        <Button Content="Add" Grid.Column="3" Click="AddOrderClick"/>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Pay for order" DockPanel.Dock="Bottom">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox Text="{Binding SelectedPendingOrder.Table.Name}" Grid.Column="0" IsReadOnly="True"/>
+                        <TextBox Text="{Binding SelectedPendingOrder.Name}" Grid.Column="1" IsReadOnly="True"/>
+                        <TextBox Text="{Binding SelectedPendingOrder.RealPrice}" Grid.Column="2" IsReadOnly="True"/>
+                        <Button Content="Pay" Grid.Column="3" IsEnabled="{Binding IsPayForOrderButtonEnabled}" Click="PayForOrderClick"/>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Tables" DockPanel.Dock="Left" Width="100">
+                    <ListView ItemsSource="{Binding Tables}" SelectedItem="{Binding SelectedTableDetail, Mode=OneWayToSource}">
+
+                    </ListView>
+                </GroupBox>
+
+                <GroupBox Header="Table detail">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Column="0" Grid.Row="0" Content="Name"/>
+                            <Label Grid.Column="1" Grid.Row="0" Content="{Binding SelectedTableDetail.Name}"/>
+
+                            <Label Grid.Column="0" Grid.Row="1" Content="Total price"/>
+                            <Label Grid.Column="1" Grid.Row="1" Content="{Binding SelectedTableDetail.TotalPrice}"/>
+                        </Grid>
+                        <ListView ItemsSource="{Binding SelectedTableDetail.PendingOrders}" SelectedItem="{Binding SelectedPendingOrder, Mode=OneWayToSource}">
+
+                        </ListView>
+                    </StackPanel>
+                </GroupBox>
+
+            </DockPanel>
+        </TabItem>
+
+        <TabItem Header="Accounting">
+            <GroupBox Header="Last month's transacitons">
+                <DataGrid ItemsSource="{Binding LastMonthOrders}" IsReadOnly="True">
+                    
+                </DataGrid>
+            </GroupBox>
+        </TabItem>
+    </TabControl>
 </Window>

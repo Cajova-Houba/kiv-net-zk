@@ -24,5 +24,15 @@ namespace EntityFrameworkTest1
         {
             InitializeComponent();
         }
+
+        private void AddOrderClick(object sender, RoutedEventArgs e)
+        {
+            ((ViewModel.ViewModel)DataContext).AddOrder();
+        }
+
+        private void PayForOrderClick(object sender, RoutedEventArgs e)
+        {
+            ((ViewModel.ViewModel)DataContext).PayOrder();
+        }
     }
 }

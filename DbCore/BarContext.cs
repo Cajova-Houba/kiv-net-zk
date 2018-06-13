@@ -24,7 +24,6 @@ namespace DbCore
             Ingredient rum = context.Ingredients.Add(new Ingredient() { Name = "Rum" });
             context.SaveChanges();
             Ingredient coke = context.Ingredients.Add(new Ingredient() { Name = "Coke" });
-            //asdasd
             context.SaveChanges();
             Ingredient beer = context.Ingredients.Add(new Ingredient() { Name = "Beer" });
             context.SaveChanges();

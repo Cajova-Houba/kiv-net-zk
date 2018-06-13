@@ -9,3 +9,14 @@ C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\obj\Debug\DbCore.csproj
 C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\obj\Debug\DbCore.csproj.CoreCompileInputs.cache
 C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\obj\Debug\DbCore.dll
 C:\Users\valesz\source\repos\EntityFrameworkTest1\DbCore\obj\Debug\DbCore.pdb
+C:\Users\Zdenda\prg\skola\kiv-net\kiv-net-zk\DbCore\bin\Debug\DbCore.dll.config
+C:\Users\Zdenda\prg\skola\kiv-net\kiv-net-zk\DbCore\bin\Debug\DbCore.dll
+C:\Users\Zdenda\prg\skola\kiv-net\kiv-net-zk\DbCore\bin\Debug\DbCore.pdb
+C:\Users\Zdenda\prg\skola\kiv-net\kiv-net-zk\DbCore\bin\Debug\EntityFramework.dll
+C:\Users\Zdenda\prg\skola\kiv-net\kiv-net-zk\DbCore\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Zdenda\prg\skola\kiv-net\kiv-net-zk\DbCore\bin\Debug\EntityFramework.xml
+C:\Users\Zdenda\prg\skola\kiv-net\kiv-net-zk\DbCore\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Zdenda\prg\skola\kiv-net\kiv-net-zk\DbCore\obj\Debug\DbCore.csprojResolveAssemblyReference.cache
+C:\Users\Zdenda\prg\skola\kiv-net\kiv-net-zk\DbCore\obj\Debug\DbCore.csproj.CoreCompileInputs.cache
+C:\Users\Zdenda\prg\skola\kiv-net\kiv-net-zk\DbCore\obj\Debug\DbCore.dll
+C:\Users\Zdenda\prg\skola\kiv-net\kiv-net-zk\DbCore\obj\Debug\DbCore.pdb
