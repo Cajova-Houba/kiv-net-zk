@@ -152,7 +152,7 @@ namespace EntityFrameworkTest1.ViewModel
                 { "Orders in last month", new List<IExportable>(LastMonthOrders) }
             },
             "Orders in last month");
-            File.WriteAllText(fileName + ".html", htmlExport);
+            File.WriteAllText(fileName, htmlExport);
         }
     }
 }

@@ -38,7 +38,11 @@ namespace EntityFrameworkTest1
 
         private void HtmlExportClick(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                AddExtension = true,
+                DefaultExt = "html"
+            };
             if (saveFileDialog.ShowDialog() == true)
             {
                 try

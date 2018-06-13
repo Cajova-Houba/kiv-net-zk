@@ -48,11 +48,11 @@ namespace DbCore.Service
 
         public List<Order> OrdersInCurrentMonth()
         {
-            DateTime now = new DateTime();
+            DateTime now = DateTime.Now;
             DateTime dateFrom = new DateTime(now.Year, now.Month, 1);
             DateTime dateTo = dateFrom.AddMonths(1).AddDays(-1);
 
-            return barContext.Orders.ToList();
+            return OrdersInDateRange(dateFrom, dateTo);
         }
 
         public List<Order> OrdersInDateRange(DateTime dateFrom, DateTime dateTo)
