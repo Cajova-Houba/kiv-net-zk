@@ -36,9 +36,9 @@ namespace EntityFrameworkTest1
             stringBuilder.Append("<tbody>");
             if (dataToExport.Count() > 0)
             {
-                stringBuilder.Append("<tr>");
                 foreach(IExportable exportable in dataToExport)
                 {
+                    stringBuilder.Append("<tr>");
                     string[] fieldNames = exportable.GetFieldNames();
                     foreach(string fName in fieldNames)
                     {
@@ -49,8 +49,8 @@ namespace EntityFrameworkTest1
                                 .Append("</td>");
                         }
                     }
+                    stringBuilder.Append("</tr>");
                 }
-                stringBuilder.Append("</tr>");
             }
             stringBuilder.Append("</tbody>");
 

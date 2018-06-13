@@ -56,12 +56,13 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="80"/>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="30"/>
                                 <RowDefinition Height="30"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
                             <Label Grid.Column="0" Grid.Row="0" Content="Name"/>
@@ -69,10 +70,16 @@
 
                             <Label Grid.Column="0" Grid.Row="1" Content="Total price"/>
                             <Label Grid.Column="1" Grid.Row="1" Content="{Binding SelectedTableDetail.TotalPrice}"/>
+                            
+                            <ListView ItemsSource="{Binding SelectedTableDetail.PendingOrders, UpdateSourceTrigger=PropertyChanged}" 
+                                      SelectedItem="{Binding SelectedPendingOrder, Mode=OneWayToSource}" 
+                                      ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                                      ScrollViewer.CanContentScroll="False"
+                                      Grid.Row="2" 
+                                      Grid.ColumnSpan="2" 
+                                      >
+                            </ListView>
                         </Grid>
-                        <ListView ItemsSource="{Binding SelectedTableDetail.PendingOrders}" SelectedItem="{Binding SelectedPendingOrder, Mode=OneWayToSource}">
-
-                        </ListView>
                     </StackPanel>
                 </GroupBox>
 

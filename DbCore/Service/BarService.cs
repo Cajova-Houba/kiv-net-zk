@@ -31,6 +31,11 @@ namespace DbCore.Service
             return barContext.Drinks.ToList();
         }
 
+        public Table GetTableById(int id)
+        {
+            return barContext.Tables.Find(id);
+        }
+
         public void AddOrderToTable(Table table, string name, double price)
         {
             PendingOrder po = new PendingOrder() { Table = table, Name = name, RealPrice = price };

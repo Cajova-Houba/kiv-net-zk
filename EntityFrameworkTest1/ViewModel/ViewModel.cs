@@ -37,6 +37,7 @@ namespace EntityFrameworkTest1.ViewModel
             {
                 selectedTableDetail = value;
                 OnPropertyChanged("SelectedTableDetail");
+                OnPropertyChanged("SelectedTableDetail.PendingOrders");
             }
         }
 
@@ -134,13 +135,25 @@ namespace EntityFrameworkTest1.ViewModel
         public void AddOrder()
         {
             barService.AddOrderToTable(AddOrderSelectedTable, AddOrderSelectedDrink.Name, AddOrderSelectedDrink.RecommendedPrice);
-            Refresh();
+            if (SelectedTableDetail != null)
+            {
+                int id = SelectedTableDetail.Id;
+                SelectedTableDetail = null;
+                SelectedTableDetail = barService.GetTableById(id);
+            }
+            Tables = new ObservableCollection<Table>(barService.GetAllTables());
         }
 
         public void PayOrder()
         {
             barService.PayForOrder(SelectedPendingOrder);
-            Refresh();
+            LastMonthOrders = new ObservableCollection<Order>(barService.OrdersInCurrentMonth());
+            if (SelectedTableDetail != null)
+            {
+                int id = SelectedTableDetail.Id;
+                SelectedTableDetail = null;
+                SelectedTableDetail = barService.GetTableById(id);
+            }
             SelectedPendingOrder = null;
         }
 
