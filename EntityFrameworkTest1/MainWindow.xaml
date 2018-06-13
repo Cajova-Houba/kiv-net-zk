@@ -53,7 +53,7 @@
 
                 <GroupBox Header="Table detail">
                     <StackPanel Orientation="Vertical">
-                        <Grid>
+                        <Grid VerticalAlignment="Top">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="80"/>
                                 <ColumnDefinition Width="*"/>
@@ -62,7 +62,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="30"/>
                                 <RowDefinition Height="30"/>
-                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*" MaxHeight="200"/>
                             </Grid.RowDefinitions>
 
                             <Label Grid.Column="0" Grid.Row="0" Content="Name"/>
@@ -70,15 +70,14 @@
 
                             <Label Grid.Column="0" Grid.Row="1" Content="Total price"/>
                             <Label Grid.Column="1" Grid.Row="1" Content="{Binding SelectedTableDetail.TotalPrice}"/>
-                            
-                            <ListView ItemsSource="{Binding SelectedTableDetail.PendingOrders, UpdateSourceTrigger=PropertyChanged}" 
-                                      SelectedItem="{Binding SelectedPendingOrder, Mode=OneWayToSource}" 
-                                      ScrollViewer.VerticalScrollBarVisibility="Auto" 
-                                      ScrollViewer.CanContentScroll="False"
-                                      Grid.Row="2" 
-                                      Grid.ColumnSpan="2" 
-                                      >
-                            </ListView>
+
+                                <ListBox ItemsSource="{Binding SelectedTableDetail.PendingOrders, UpdateSourceTrigger=PropertyChanged}" 
+                                          SelectedItem="{Binding SelectedPendingOrder, Mode=OneWayToSource}"
+                                         MaxHeight="100"
+                                         Grid.Row="2" 
+                                        Grid.ColumnSpan="2" 
+                                          >
+                                </ListBox>
                         </Grid>
                     </StackPanel>
                 </GroupBox>
